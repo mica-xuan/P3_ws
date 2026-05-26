@@ -32,40 +32,6 @@ Others:       None
 ***********************************************************************************/
 C3iroboticsLidar::C3iroboticsLidar()
 {
-    m_device_connect =/*********************************************************************************
-File name:	  C3iroboticsLidar.h
-Author:       Kimbo
-Version:      V1.7.1
-Date:	 	  2017-02-03
-Description:  3irobotics lidar sdk
-Others:       None
-
-History:
-	1. Date:
-	Author:
-	Modification:
-***********************************************************************************/
-
-/********************************* File includes **********************************/
-#include "C3iroboticsLidar.h"
-
-/******************************* Current libs includes ****************************/
-#include <iostream>
-
-/********************************** Name space ************************************/
-using namespace everest;
-using namespace everest::hwdrivers;
-
-/***********************************************************************************
-Function:     C3iroboticsLidar
-Description:  The constructor of C3iroboticsLidar
-Input:        None
-Output:       None
-Return:       None
-Others:       None
-***********************************************************************************/
-C3iroboticsLidar::C3iroboticsLidar()
-{
     m_device_connect = NULL;
     m_data_with_signal = true;
     m_receive_lidar_speed = false;

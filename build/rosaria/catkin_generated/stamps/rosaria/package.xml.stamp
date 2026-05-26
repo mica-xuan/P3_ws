@@ -1,5 +1,3 @@
-set(rosaria_MESSAGE_FILES "msg/BumperState.msg")
-set(rosaria_SERVICE_FILES "")
 <package>
   <name>rosaria</name>
   <version>0.9.0</version>
@@ -34,7 +32,7 @@ set(rosaria_SERVICE_FILES "")
   <build_depend>nav_msgs</build_depend>
   <build_depend>geometry_msgs</build_depend>
   <build_depend>sensor_msgs</build_depend>
-  <build_depend>std_msgs</build_depend>
+  <run_depend>std_msgs</run_depend>
   <build_depend>tf</build_depend>
   <build_depend>dynamic_reconfigure</build_depend>
   <build_depend>std_srvs</build_depend>

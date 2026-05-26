@@ -1,4 +1,4 @@
-set(ORDERED_PATHS "/opt/ros/kinetic/lib")set(_CATKIN_CURRENT_PACKAGE "rosaria_client")
+set(_CATKIN_CURRENT_PACKAGE "rosaria_client")
 set(rosaria_client_VERSION "0.0.0")
 set(rosaria_client_MAINTAINER "pengtang <ptang@fordham.edu>")
 set(rosaria_client_PACKAGE_FORMAT "1")

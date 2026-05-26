@@ -3,11 +3,6 @@ project(delta_2b_lidar)
 
 set(DELTA_2B_LIDAR_SDK_PATH "./sdk/")
 
-FILE(Gcmake_minimum_required(VERSION 2.8.3)
-project(delta_2b_lidar)
-
-set(DELTA_2B_LIDAR_SDK_PATH "./sdk/")
-
 FILE(GLOB DELTA_2B_LIDAR_SDK_SRC 
   "${DELTA_2B_LIDAR_SDK_PATH}/src/*.cpp"
 )

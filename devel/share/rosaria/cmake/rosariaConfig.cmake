@@ -10,18 +10,6 @@ macro(_list_append_deduplicate listname)
     endif()
     list(APPEND ${listname} ${ARGN})
   endif()
-endmac# generated from catkin/cmake/template/pkgConfig.cmake.in
-
-# append elements to a list and remove existing duplicates from the list
-# copied from catkin/cmake/list_append_deduplicate.cmake to keep pkgConfig
-# self contained
-macro(_list_append_deduplicate listname)
-  if(NOT "${ARGN}" STREQUAL "")
-    if(${listname})
-      list(REMOVE_ITEM ${listname} ${ARGN})
-    endif()
-    list(APPEND ${listname} ${ARGN})
-  endif()
 endmacro()
 
 # append elements to a list if they are not already in the list
@@ -79,14 +67,14 @@ set(rosaria_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(rosaria_SOURCE_PREFIX /home/gbx/pioneer_ws/src/rosaria)
-  set(rosaria_DEVEL_PREFIX /home/gbx/pioneer_ws/devel)
+  set(rosaria_SOURCE_PREFIX /home/mica/Desktop/pioneer_ws/src/rosaria)
+  set(rosaria_DEVEL_PREFIX /home/mica/Desktop/pioneer_ws/devel)
   set(rosaria_INSTALL_PREFIX "")
   set(rosaria_PREFIX ${rosaria_DEVEL_PREFIX})
 else()
   set(rosaria_SOURCE_PREFIX "")
   set(rosaria_DEVEL_PREFIX "")
-  set(rosaria_INSTALL_PREFIX /home/gbx/pioneer_ws/install)
+  set(rosaria_INSTALL_PREFIX /home/mica/Desktop/pioneer_ws/install)
   set(rosaria_PREFIX ${rosaria_INSTALL_PREFIX})
 endif()
 
@@ -103,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(rosaria_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/gbx/pioneer_ws/devel/include " STREQUAL " ")
+if(NOT "/home/mica/Desktop/pioneer_ws/devel/include " STREQUAL " ")
   set(rosaria_INCLUDE_DIRS "")
-  set(_include_dirs "/home/gbx/pioneer_ws/devel/include")
+  set(_include_dirs "/home/mica/Desktop/pioneer_ws/devel/include")
   if(NOT "https://github.com/amor-ros-pkg/rosaria/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/amor-ros-pkg/rosaria/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://www.ros.org/wiki/ROSARIA " STREQUAL " ")
@@ -122,7 +110,7 @@ if(NOT "/home/gbx/pioneer_ws/devel/include " STREQUAL " ")
         message(FATAL_ERROR "Project 'rosaria' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'rosaria' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/gbx/pioneer_ws/src/rosaria/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'rosaria' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/mica/Desktop/pioneer_ws/src/rosaria/${idir}'.  ${_report}")
     endif()
     _list_append_unique(rosaria_INCLUDE_DIRS ${include})
   endforeach()
@@ -130,7 +118,7 @@ endif()
 
 set(libraries "")
 foreach(library ${libraries})
-  # keep build configuration keywords, target names and absolute libraries as-is
+  # keep build configuration keywords, generator expressions, target names, and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
     list(APPEND rosaria_LIBRARIES ${library})
   elseif(${library} MATCHES "^-l")
@@ -158,6 +146,8 @@ foreach(library ${libraries})
       target_link_options("${interface_target_name}" INTERFACE "${library}")
     endif()
     list(APPEND rosaria_LIBRARIES "${interface_target_name}")
+  elseif(${library} MATCHES "^\\$<")
+    list(APPEND rosaria_LIBRARIES ${library})
   elseif(TARGET ${library})
     list(APPEND rosaria_LIBRARIES ${library})
   elseif(IS_ABSOLUTE ${library})
@@ -166,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/gbx/pioneer_ws/devel/lib;/home/gbx/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/mica/Desktop/pioneer_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -223,7 +213,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(rosaria_LIBRARIES ${rosaria_LIBRARIES})
 
   _list_append_unique(rosaria_LIBRARY_DIRS ${${rosaria_dep}_LIBRARY_DIRS})
-  list(APPEND rosaria_EXPORTED_TARGETS ${${rosaria_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(rosaria_EXPORTED_TARGETS ${${rosaria_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "rosaria-msg-extras.cmake")

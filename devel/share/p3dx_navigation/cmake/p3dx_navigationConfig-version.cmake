@@ -1,9 +1,3 @@
-
-"use strict";
-
-module.exports = {
-  msg: require('./msg/_index.js'),
-};
 # generated from catkin/cmake/template/pkgConfig-version.cmake.in
 set(PACKAGE_VERSION "0.0.0")
 

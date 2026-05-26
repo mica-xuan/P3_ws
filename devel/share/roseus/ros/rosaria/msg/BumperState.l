@@ -23,31 +23,6 @@
    (&key
     ((:header __header) (instance std_msgs::Header :init))
     ((:front_bumpers __front_bumpers) (let (r) (dotimes (i 0) (push nil r)) r))
-    ((:rear_bumpers __rear_bumpers) (let (r) (dotimes (i 0) (push nil r)) r);; Auto-generated. Do not edit!
-
-
-(when (boundp 'rosaria::BumperState)
-  (if (not (find-package "ROSARIA"))
-    (make-package "ROSARIA"))
-  (shadow 'BumperState (find-package "ROSARIA")))
-(unless (find-package "ROSARIA::BUMPERSTATE")
-  (make-package "ROSARIA::BUMPERSTATE"))
-
-(in-package "ROS")
-;;//! \htmlinclude BumperState.msg.html
-(if (not (find-package "STD_MSGS"))
-  (ros::roseus-add-msgs "std_msgs"))
-
-
-(defclass rosaria::BumperState
-  :super ros::object
-  :slots (_header _front_bumpers _rear_bumpers ))
-
-(defmethod rosaria::BumperState
-  (:init
-   (&key
-    ((:header __header) (instance std_msgs::Header :init))
-    ((:front_bumpers __front_bumpers) (let (r) (dotimes (i 0) (push nil r)) r))
     ((:rear_bumpers __rear_bumpers) (let (r) (dotimes (i 0) (push nil r)) r))
     )
    (send-super :init)
@@ -139,8 +114,6 @@ uint32 seq
 # time-handling sugar is provided by the client library
 time stamp
 #Frame this data is associated with
-# 0: no frame
-# 1: global frame
 string frame_id
 
 ")

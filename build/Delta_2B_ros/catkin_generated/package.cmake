@@ -1,4 +1,4 @@
-set(ORDERED_PATHS "/opt/ros/kinetic/lib")set(_CATKIN_CURRENT_PACKAGE "delta_2b_lidar")
+set(_CATKIN_CURRENT_PACKAGE "delta_2b_lidar")
 set(delta_2b_lidar_VERSION "1.0.0")
 set(delta_2b_lidar_MAINTAINER "3i Robotics ROS Maintainer <robot@3irobotics.com>")
 set(delta_2b_lidar_PACKAGE_FORMAT "1")

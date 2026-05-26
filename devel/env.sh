@@ -1,5 +1,3 @@
-- setup-file:
-    local-name: /home/gbx/pioneer_ws/devel/setup.sh
 #!/usr/bin/env sh
 # generated from catkin/cmake/templates/env.sh.in
 

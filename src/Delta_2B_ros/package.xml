@@ -4,12 +4,6 @@
   <version>1.0.0</version>
   <description>The delta_2b_lidar ros package, support delta_2b_lidar </description>
 
-  <maintainer email="r<?xml version="1.0"?>
-<package>
-  <name>delta_2b_lidar</name>
-  <version>1.0.0</version>
-  <description>The delta_2b_lidar ros package, support delta_2b_lidar </description>
-
   <maintainer email="robot@3irobotics.com">3i Robotics ROS Maintainer</maintainer>
   <license>BSD</license>
 

@@ -1,9 +1,8 @@
-
-# Install script for directory: /home/gbx/pioneer_ws/src/Delta_2B_ros
+# Install script for directory: /home/mica/Desktop/pioneer_ws/src/Delta_2B_ros
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/gbx/pioneer_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/mica/Desktop/pioneer_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,34 +32,39 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/gbx/pioneer_ws/build/Delta_2B_ros/catkin_generated/installspace/delta_2b_lidar.pc")
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mica/Desktop/pioneer_ws/build/Delta_2B_ros/catkin_generated/installspace/delta_2b_lidar.pc")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/delta_2b_lidar/cmake" TYPE FILE FILES
-    "/home/gbx/pioneer_ws/build/Delta_2B_ros/catkin_generated/installspace/delta_2b_lidarConfig.cmake"
-    "/home/gbx/pioneer_ws/build/Delta_2B_ros/catkin_generated/installspace/delta_2b_lidarConfig-version.cmake"
+    "/home/mica/Desktop/pioneer_ws/build/Delta_2B_ros/catkin_generated/installspace/delta_2b_lidarConfig.cmake"
+    "/home/mica/Desktop/pioneer_ws/build/Delta_2B_ros/catkin_generated/installspace/delta_2b_lidarConfig-version.cmake"
     )
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/delta_2b_lidar" TYPE FILE FILES "/home/gbx/pioneer_ws/src/Delta_2B_ros/package.xml")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/delta_2b_lidar" TYPE FILE FILES "/home/mica/Desktop/pioneer_ws/src/Delta_2B_ros/package.xml")
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node")
     file(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar" TYPE EXECUTABLE FILES "/home/gbx/pioneer_ws/devel/lib/delta_2b_lidar/delta_2b_lidar_node")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar" TYPE EXECUTABLE FILES "/home/mica/Desktop/pioneer_ws/devel/lib/delta_2b_lidar/delta_2b_lidar_node")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node"
-         OLD_RPATH "/opt/ros/kinetic/lib:"
+         OLD_RPATH "/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node")
@@ -68,19 +72,19 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   endif()
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node_client" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node_client")
     file(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node_client"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar" TYPE EXECUTABLE FILES "/home/gbx/pioneer_ws/devel/lib/delta_2b_lidar/delta_2b_lidar_node_client")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar" TYPE EXECUTABLE FILES "/home/mica/Desktop/pioneer_ws/devel/lib/delta_2b_lidar/delta_2b_lidar_node_client")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node_client" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node_client")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node_client"
-         OLD_RPATH "/opt/ros/kinetic/lib:"
+         OLD_RPATH "/opt/ros/noetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/delta_2b_lidar/delta_2b_lidar_node_client")
@@ -88,11 +92,11 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   endif()
 endif()
 
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/delta_2b_lidar" TYPE DIRECTORY FILES
-    "/home/gbx/pioneer_ws/src/Delta_2B_ros/launch"
-    "/home/gbx/pioneer_ws/src/Delta_2B_ros/rviz"
-    "/home/gbx/pioneer_ws/src/Delta_2B_ros/sdk"
+    "/home/mica/Desktop/pioneer_ws/src/Delta_2B_ros/launch"
+    "/home/mica/Desktop/pioneer_ws/src/Delta_2B_ros/rviz"
+    "/home/mica/Desktop/pioneer_ws/src/Delta_2B_ros/sdk"
     USE_SOURCE_PERMISSIONS)
 endif()
 

@@ -10,18 +10,6 @@ macro(_list_append_deduplicate listname)
     endif()
     list(APPEND ${listname} ${ARGN})
   endif()
-endmac# generated from catkin/cmake/template/pkgConfig.cmake.in
-
-# append elements to a list and remove existing duplicates from the list
-# copied from catkin/cmake/list_append_deduplicate.cmake to keep pkgConfig
-# self contained
-macro(_list_append_deduplicate listname)
-  if(NOT "${ARGN}" STREQUAL "")
-    if(${listname})
-      list(REMOVE_ITEM ${listname} ${ARGN})
-    endif()
-    list(APPEND ${listname} ${ARGN})
-  endif()
 endmacro()
 
 # append elements to a list if they are not already in the list
@@ -79,14 +67,14 @@ set(delta_2b_lidar_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(delta_2b_lidar_SOURCE_PREFIX /home/gbx/pioneer_ws/src/Delta_2B_ros)
-  set(delta_2b_lidar_DEVEL_PREFIX /home/gbx/pioneer_ws/devel)
+  set(delta_2b_lidar_SOURCE_PREFIX /home/mica/Desktop/pioneer_ws/src/Delta_2B_ros)
+  set(delta_2b_lidar_DEVEL_PREFIX /home/mica/Desktop/pioneer_ws/devel)
   set(delta_2b_lidar_INSTALL_PREFIX "")
   set(delta_2b_lidar_PREFIX ${delta_2b_lidar_DEVEL_PREFIX})
 else()
   set(delta_2b_lidar_SOURCE_PREFIX "")
   set(delta_2b_lidar_DEVEL_PREFIX "")
-  set(delta_2b_lidar_INSTALL_PREFIX /home/gbx/pioneer_ws/install)
+  set(delta_2b_lidar_INSTALL_PREFIX /home/mica/Desktop/pioneer_ws/install)
   set(delta_2b_lidar_PREFIX ${delta_2b_lidar_INSTALL_PREFIX})
 endif()
 
@@ -122,7 +110,7 @@ if(NOT " " STREQUAL " ")
         message(FATAL_ERROR "Project 'delta_2b_lidar' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'delta_2b_lidar' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/gbx/pioneer_ws/src/Delta_2B_ros/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'delta_2b_lidar' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/mica/Desktop/pioneer_ws/src/Delta_2B_ros/${idir}'.  ${_report}")
     endif()
     _list_append_unique(delta_2b_lidar_INCLUDE_DIRS ${include})
   endforeach()
@@ -130,7 +118,7 @@ endif()
 
 set(libraries "")
 foreach(library ${libraries})
-  # keep build configuration keywords, target names and absolute libraries as-is
+  # keep build configuration keywords, generator expressions, target names, and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
     list(APPEND delta_2b_lidar_LIBRARIES ${library})
   elseif(${library} MATCHES "^-l")
@@ -158,6 +146,8 @@ foreach(library ${libraries})
       target_link_options("${interface_target_name}" INTERFACE "${library}")
     endif()
     list(APPEND delta_2b_lidar_LIBRARIES "${interface_target_name}")
+  elseif(${library} MATCHES "^\\$<")
+    list(APPEND delta_2b_lidar_LIBRARIES ${library})
   elseif(TARGET ${library})
     list(APPEND delta_2b_lidar_LIBRARIES ${library})
   elseif(IS_ABSOLUTE ${library})
@@ -166,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/gbx/pioneer_ws/devel/lib;/home/gbx/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/mica/Desktop/pioneer_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -223,7 +213,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(delta_2b_lidar_LIBRARIES ${delta_2b_lidar_LIBRARIES})
 
   _list_append_unique(delta_2b_lidar_LIBRARY_DIRS ${${delta_2b_lidar_dep}_LIBRARY_DIRS})
-  list(APPEND delta_2b_lidar_EXPORTED_TARGETS ${${delta_2b_lidar_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(delta_2b_lidar_EXPORTED_TARGETS ${${delta_2b_lidar_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

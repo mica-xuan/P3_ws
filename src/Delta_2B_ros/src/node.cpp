@@ -45,53 +45,6 @@ void publish_scan(ros::Publisher *pub,
                   float angle_min, float angle_max,
                   std::string frame_id)
 {
-    sensor_msgs::/*
-*  3iRoboticsLIDAR System II
-*  Driver Interface
-*
-*  Copyright 2017 3iRobotics
-*  All rights reserved.
-*
-*	Author: 3iRobotics, Data:2017-09-15
-*
-*/
-
-#include "ros/ros.h"
-#include "sensor_msgs/LaserScan.h"
-
-#include "C3iroboticsLidar.h"
-#include "../sdk/include/CSerialConnection.h"
-
-#define DEG2RAD(x) ((x)*M_PI/180.)
-//#ifndef _countof
-//#define _countof(_Array) (int)(sizeof(_Array) / sizeof(_Array[0]))
-//#endif
-
-
-typedef struct _rslidar_data
-{
-    _rslidar_data()
-    {
-        signal = 0;
-        angle = 0.0;
-        distance = 0.0;
-    }
-    uint8_t signal;
-    float   angle;
-    float   distance;
-}RslidarDataComplete;
-
-
-using namespace std;
-using namespace everest::hwdrivers;
-
-void publish_scan(ros::Publisher *pub,
-                  _rslidar_data *nodes,
-                  size_t node_count, ros::Time start,
-                  double scan_time,
-                  float angle_min, float angle_max,
-                  std::string frame_id)
-{
     sensor_msgs::LaserScan scan_msg;
 
     scan_msg.header.stamp = start;

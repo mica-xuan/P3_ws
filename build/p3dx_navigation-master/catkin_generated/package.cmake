@@ -1,4 +1,4 @@
-set(ORDERED_PATHS "/opt/ros/kinetic/lib")set(_CATKIN_CURRENT_PACKAGE "p3dx_navigation")
+set(_CATKIN_CURRENT_PACKAGE "p3dx_navigation")
 set(p3dx_navigation_VERSION "0.0.0")
 set(p3dx_navigation_MAINTAINER "thomas <thomas@todo.todo>")
 set(p3dx_navigation_PACKAGE_FORMAT "1")

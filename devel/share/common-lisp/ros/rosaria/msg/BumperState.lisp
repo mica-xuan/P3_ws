@@ -11,19 +11,6 @@
     :reader header
     :initarg :header
     :type std_msgs-msg:Header
-    :initform (cl:make-i; Auto-generated. Do not edit!
-
-
-(cl:in-package rosaria-msg)
-
-
-;//! \htmlinclude BumperState.msg.html
-
-(cl:defclass <BumperState> (roslisp-msg-protocol:ros-message)
-  ((header
-    :reader header
-    :initarg :header
-    :type std_msgs-msg:Header
     :initform (cl:make-instance 'std_msgs-msg:Header))
    (front_bumpers
     :reader front_bumpers
@@ -114,10 +101,10 @@
   "f81947761ff7e166a3bbaf937b9869b5")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<BumperState>)))
   "Returns full string definition for message of type '<BumperState>"
-  (cl:format cl:nil "Header header~%bool[] front_bumpers~%bool[] rear_bumpers~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%bool[] front_bumpers~%bool[] rear_bumpers~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'BumperState)))
   "Returns full string definition for message of type 'BumperState"
-  (cl:format cl:nil "Header header~%bool[] front_bumpers~%bool[] rear_bumpers~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%bool[] front_bumpers~%bool[] rear_bumpers~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <BumperState>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))

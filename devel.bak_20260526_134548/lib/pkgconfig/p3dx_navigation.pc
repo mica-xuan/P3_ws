@@ -1,0 +1,15 @@
+prefix=/home/gbx/pioneer_ws/devel
+
+Name: p3dx_navigation
+Description: Description of p3dx_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires:prefix=/home/gbx/pioneer_ws/devel
+
+Name: p3dx_navigation
+Description: Description of p3dx_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

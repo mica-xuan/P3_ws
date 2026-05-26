@@ -1,11 +1,4 @@
-prefix=/home/gbx/pioneer_ws/install
-
-Name: rosaria
-Description: Description of rosaria
-Version: 0.9.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: roscpp nav_msgs geometry_msgs prefix=/home/gbx/pioneer_ws/install
+prefix=/home/mica/Desktop/pioneer_ws/install
 
 Name: rosaria
 Description: Description of rosaria
